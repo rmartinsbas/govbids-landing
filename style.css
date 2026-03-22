@@ -70,6 +70,7 @@ img { max-width: 100%; display: block; }
   color: var(--color-white);
 }
 .nav__logo span { color: var(--color-accent); }
+.nav__logo .bi { color: var(--color-accent); margin-right: 4px; }
 .nav__links {
   display: flex;
   gap: 32px;
