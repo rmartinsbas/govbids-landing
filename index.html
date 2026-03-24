@@ -226,9 +226,15 @@
         GovBids is currently in private beta.
         Request early access and we'll be in touch.
       </p>
-      <a href="mailto:contact@govbids.tech?subject=Early%20Access%20Request" class="btn btn--light">
-        Request Early Access
-      </a>
+      <form id="cta-form" class="cta-form" action="https://formspree.io/f/xgongbrq" method="POST">
+        <input type="text" name="name" placeholder="Your name" required>
+        <input type="email" name="email" placeholder="Your email" required>
+        <textarea name="message" placeholder="Message (optional)" rows="3"></textarea>
+        <button type="submit" class="btn btn--light">Send Request</button>
+      </form>
+      <p id="cta-thanks" class="cta-thanks" hidden>
+        Thanks! We'll be in touch soon.
+      </p>
     </div>
   </section>
 
@@ -241,6 +247,27 @@
       <span class="footer__copy">&copy; 2026 GovBids. All rights reserved.</span>
     </div>
   </footer>
+
+  <script>
+    document.getElementById('cta-form').addEventListener('submit', function(e) {
+      e.preventDefault();
+      var form = this;
+      fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      }).then(function(r) {
+        if (r.ok) {
+          form.hidden = true;
+          document.getElementById('cta-thanks').hidden = false;
+        } else {
+          alert('Something went wrong. Please try again.');
+        }
+      }).catch(function() {
+        alert('Network error. Please try again.');
+      });
+    });
+  </script>
 
 </body>
 </html>
