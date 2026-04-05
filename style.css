@@ -362,6 +362,12 @@ img { max-width: 100%; display: block; }
   resize: vertical;
   min-height: 72px;
 }
+.cta-form__note {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 0;
+  text-align: center;
+}
 .cta-form .btn {
   align-self: center;
   margin-top: 4px;

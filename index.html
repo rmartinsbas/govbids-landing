@@ -228,9 +228,13 @@
         Request early access and we'll be in touch.
       </p>
       <form id="cta-form" class="cta-form" action="https://formspree.io/f/xgongbrq" method="POST">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Your email" required>
+        <input type="text" name="name" placeholder="Your name *" required>
+        <input type="email" name="email" placeholder="Your email *" required>
+        <input type="url" name="linkedin" placeholder="Your LinkedIn profile URL *" required>
+        <input type="url" name="company_linkedin" placeholder="Company LinkedIn page URL *" required>
+        <input type="url" name="company_website" placeholder="Company website URL *" required>
         <textarea name="message" placeholder="Message (optional)" rows="3"></textarea>
+        <p class="cta-form__note">* Required field. We only respond to corporate e-mail addresses.</p>
         <button type="submit" class="btn btn--light">Send Request</button>
       </form>
       <p id="cta-thanks" class="cta-thanks" hidden>
